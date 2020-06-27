@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  /* font-family: Lato; */
+  font-family: 'Lato', sans-serif;
+  color: white; 
+  background-color: black;
 }
 
 .App-logo {
@@ -35,4 +39,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.MuiPaper-root .MuiAppBar-root .MuiAppBar-positionStatic .MuiAppBar-colorPrimary .myAppBar .MuiPaper-elevation4 {
+  background-color: #696969;
+}
+
+.movieElement {
+  /* margin-left: 2%;
+  margin-right: 2%; */
+  cursor: pointer;
+  margin: 2%;
+  max-width: 185px;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.favorite-panel {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: grey; */
+  width: 100%;
+  height: 300px;
+  margin: 5%;
+}
+
+.FavoriteBasket {
+  min-height: 100vh;
+  /* background-color:red; */
+}
+
+h4 {
+  margin:10%;
+  
+  /* margin-top:50%; */
 }

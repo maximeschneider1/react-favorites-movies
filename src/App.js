@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Home from "./Components/Home";
+import FavoriteBasket from "./Components/FavoriteBasket"
+import { FavoriteProvider } from './Context/FavoriteContext'
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+// import { ThemeProvider } from '@material-ui/core';
 
-function App() {
+export const ApiKey = "xxxxxxxxxxxx";
+
+function App({ state }) {
+  var [search, askSearch] = useState("");
+
+  const myCallback = (dataFromChild) => {
+    askSearch(dataFromChild)
+  }
+
+  useEffect(() => {
+  }, [search]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <ThemeProvider theme={favorites}> */}
+      <FavoriteProvider >
+        <Router>
+        <Route exact path='/' component={Home} />
+        <Route path='/Favorites' render={() => <FavoriteBasket/>} />
+        </Router>
+        </FavoriteProvider>
+      {/* </ThemeProvider> */}
     </div>
   );
 }
-
 export default App;
